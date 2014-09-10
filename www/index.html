@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>App to Pediatria</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+        <link rel="stylesheet" href="css/pediatria.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+        <script src="js/pediatria.js" ></script>
+    </head>
+    <body>
+        <!-- ṕagina de inicio-->
+        <div data-role="page" id="pageInicio">
+            <div data-role="header" >
+                <h1>Welcome to the App</h1>
+            </div>
+            <div data-role="content">
+                <div class="centrar-imagen">       
+                    <img src="img/images.jpg  "id ="imagen"/>
+                </div>
+            </div>
+            <a data-role="button" href="#pageMenu" data-positio="fixed"  >calculate</a>
+        </div>
+        <!--página de del menu principal-->
+        <div data-role="page" id ="pageMenu">
+            <div data-role="header">
+                <h1>PICU tools</h1>
+                <a href="#pageInicio"  data-transition="slide" > < </a>
+                <a href="#pagePump" data-transition="slide"  id="familiaMedicamento"> > </a>
+                
+            </div>
+            <div data-role="content">
+                <form>
+                    <label>patient weight:</label> 
+                    <input type="text" id ="weith">
+                    <label>type of weigth:</label>
+                    <select data-native-menu="false" id = "typeWeith">
+                        <option>Menu</option>    
+                        <option>kilograms</option>    
+                        <option>pounds</option>    
+                    </select>
+                    <label>dosage form</label>
+                    <select data-native-menu="false" id = "dosis">
+                        <option>Menu</option>    
+                        <option>IV Pumps</option>    
+                        <option>IV Bolus</option>    
+                    </select>
+                </form>
+            </div>
+        </div>
+        <!--pagina de las familias de los medicamentos -->
+        <div data-role="page" id="pagePump">
+            <div data-role="header" data-theme="c">
+                <h1>Family of Drugs</h1>
+                <a href="#pageMenu" data-rel="back"> < </a> 
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-divider-theme="b" id ="medList">
+                    <li data-role="list-divider">Family of Drugs</li>
+                </ul>
+            </div>
+        </div>
+        <!--pagina de medicamentos de  pump-->
+        <div data-role="page" id="pagePumpDosis">
+            <div data-role="header" >
+                <h1>Family of Drugs</h1>
+                <a href="#pageMenu" data-rel="back"> < </a> 
+                <a href="#" data-transition="slide"> > </a>
+            </div>
+            <div data-role="content">
+                <table data-role="table"  id="table1"  data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a">
+                    <thead >
+                        <tr class="ui-bar-d">
+                            <th>Name</th>
+                            <th data-priority="3">Unit/k</th>
+                            <th data-priority="1"><abbr title="Rotten Tomato Rating">Dose</abbr></th>
+                            <th data-priority="5">Reference dose</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>

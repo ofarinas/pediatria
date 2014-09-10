@@ -1,0 +1,10 @@
+
+#imagen{
+max-width: 55%;
+height: auto;
+margin: 20px;
+padding: 5px;
+display: block;
+margin: auto;
+}
+.centrar-imagen { text-align: center; }
